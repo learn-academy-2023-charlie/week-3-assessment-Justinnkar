@@ -28,12 +28,14 @@ describe("fibonacciSequence", () => {
 // Pseudocode
 // Input: number greater than 2
 // Output: array that length containing the numbers of the Fibonacci sequence.
-//
-function fibonacciSequence(length) {
+const fibonacciSequence = (length) => {
+  // Initialize an array with the first two numbers in the sequence.
   const fib = [1, 1];
+  // If the length is less than or equal to 2, return the appropriate subset of the sequence.
   if (length <= 2) {
     return fib.slice(0, length);
   }
+  // Calculate the remaining numbers in the sequence and add them to the array.
   for (let i = 2; i < length; i++) {
     fib[i] = fib[i - 1] + fib[i - 2];
   }
@@ -70,8 +72,13 @@ describe("sortObjectValues", () => {
 });
 
 // b) Create the function that makes the test pass.
-function sortObjectValues(obj) {
+// Pseudocode
+// Input: object
+// Output: array of the values sorted from least to greatest.
+const sortObjectValues = (obj) => {
+  // Extract an array of values from the object.
   const values = Object.values(obj);
+  // Sort the values in ascending order using a compare function.
   return values.sort((a, b) => a - b);
 }
 
@@ -91,7 +98,12 @@ describe('accumulatingSum', () => {
 })
 
 // b) Create the function that makes the test pass.
-function accumulatingSum(arr) {
+// Pseudocode
+// Input: array
+// Output: array of the accumulating sum.
+const accumulatingSum = (arr) => {
+   // Initialize a sum variable to zero used later to add accumulating numbers.
   let sum = 0
+  // Map over the original array and return a new array containing the accumulating sum of its elements.
   return arr.map(num => sum += num)
 }
